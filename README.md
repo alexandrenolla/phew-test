@@ -45,37 +45,19 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Step-by-Step Instructions to Run DB
 
-```bash
-# unit tests
-$ npm run test
+1. Access PostgreSQL: Open your terminal and access the PostgreSQL console. You can use the default postgres user or a user you created, like default_user:
+``psql -U default_user``
 
-# e2e tests
-$ npm run test:e2e
+2. Create the Database: If you don’t have a database yet, create one with the following command:
+``CREATE DATABASE phew_test;``
 
-# test coverage
-$ npm run test:cov
-```
+3. Connect to the Database: To connect to the newly created database, run:
+``psql -U default_user -d phew_test``
 
-## Support
+4. Start the Application: Run your NestJS application to automatically generate the tables:
+``npm run start`` or ``npm run start:dev``
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-
-
-## Commands to run DB
-
-1. ``npx typeorm-ts-node-commonjs -d src/db/data-src-cli.ts migration:show``
-2. ``npm run typeorm migration:generate src/db/migrations/nome-migracao``
-3. ``npm run typeorm migration:run``
-
+5. Confirm Table Creation: You can check if the tables have been created by running:
+``\dt``

@@ -12,6 +12,7 @@ export class DatabaseService implements TypeOrmOptionsFactory {
       password: '123',
       database: 'phew_test',
       autoLoadEntities: true,
+      synchronize: true,
     };
   }
 }
