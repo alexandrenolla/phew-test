@@ -15,8 +15,3 @@ const dataSourceOptions: DataSourceOptions = {
 const dataSource = new DataSource(dataSourceOptions);
 
 export default dataSource;
-
-// Commands to run db
-// npx typeorm-ts-node-commonjs -d src/db/data-src-cli.ts migration:show
-// npm run typeorm migration:generate src/db/migrations/nome-migracao
-// npm run typeorm migration:run
