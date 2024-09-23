@@ -32,20 +32,7 @@
 $ npm install
 ```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Step-by-Step Instructions to Run DB
+## Step-by-Step instructions to run DB
 
 1. Access PostgreSQL: Open your terminal and access the PostgreSQL console. You can use the default postgres user or a user you created, like default_user:
 ``psql -U default_user``
