@@ -75,7 +75,7 @@ Nest is [MIT licensed](LICENSE).
 
 ## Commands to run DB
 
-``npx typeorm-ts-node-commonjs -d src/db/data-src-cli.ts migration:show``
-``npm run typeorm migration:generate src/db/migrations/nome-migracao``
-``npm run typeorm migration:run``
+1. ``npx typeorm-ts-node-commonjs -d src/db/data-src-cli.ts migration:show``
+2. ``npm run typeorm migration:generate src/db/migrations/nome-migracao``
+3. ``npm run typeorm migration:run``
 
