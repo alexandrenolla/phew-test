@@ -35,4 +35,4 @@
   
 	5.	Run docker compose up again and have fun.
 
-  You can access the documentation with the endpoints directly in the browser at ``http://localhost:3001/docs``, and you can also access the database using your preferred client with the credentials provided in the ``ormconfig.ts`` file.
+ *** You can access the documentation with the endpoints directly in the browser at ``http://localhost:3001/docs``, and you can also access the database using your preferred client with the credentials provided in the ``ormconfig.ts`` file. ***
