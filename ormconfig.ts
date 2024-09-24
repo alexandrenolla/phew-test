@@ -15,7 +15,7 @@ const ormconfig: PostgresConnectionOptions = {
       : false,
   migrations: ['dist/src/migrations/*{.ts,.js}'],
   migrationsTableName: 'migrations',
-  migrationsRun: true,
+  migrationsRun: false,
   entities: ['dist/src/**/**/*.entity.js'],
 };
 
