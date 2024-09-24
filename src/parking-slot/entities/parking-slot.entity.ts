@@ -22,13 +22,16 @@ export class ParkingSlot {
   @Column({
     type: 'enum',
     enum: SlotType,
+    name: 'type',
   })
   type: SlotType;
 
   @ManyToOne(() => Floor, (floor) => floor.slots)
+  @JoinColumn({ name: 'floor_id' })
   floor: Floor;
 
   @ManyToOne(() => ParkingLot, (parkingLot) => parkingLot.slots)
+  @JoinColumn({ name: 'parking_lot_id' })
   parkingLot: ParkingLot;
 
   @OneToOne(() => Vehicle, (vehicle) => vehicle.slot, { nullable: true })

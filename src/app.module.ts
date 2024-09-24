@@ -10,13 +10,16 @@ import { PanelModule } from './panel/panel.module';
 import { AdminModule } from './admin/admin.module';
 import { GridModule } from './grid/grid.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DatabaseService } from './database/database.service';
+import { ConfigModule } from '@nestjs/config';
+import ormconfig from 'ormconfig';
 
 @Module({
   imports: [
-    TypeOrmModule.forRootAsync({
-      useClass: DatabaseService,
-      inject: [DatabaseService],
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    TypeOrmModule.forRoot({
+      ...ormconfig,
     }),
     ParkingLotModule,
     FloorModule,

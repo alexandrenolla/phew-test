@@ -50,4 +50,18 @@ export class FloorService {
       vehicleType: slot.vehicle?.type || null,
     }));
   }
+
+  async findOne(floorId: number) {
+    const floor = await this.floorRepository.findOne({
+      where: {
+        id: floorId,
+      },
+    });
+
+    if (!floor) {
+      throw new NotFoundException(`Floor with id ${floorId} not found.`);
+    }
+
+    return floor;
+  }
 }

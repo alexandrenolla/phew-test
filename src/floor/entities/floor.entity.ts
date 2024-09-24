@@ -6,6 +6,7 @@ import { ParkingSlot } from 'src/parking-slot/entities/parking-slot.entity';
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -20,6 +21,7 @@ export class Floor {
   number: number;
 
   @ManyToOne(() => ParkingLot, (parkingLot) => parkingLot.floors)
+  @JoinColumn({ name: 'parking_lot_id' })
   parkingLot: ParkingLot;
 
   @OneToMany(() => ParkingSlot, (slot) => slot.floor)

@@ -7,12 +7,13 @@ export class Vehicle {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ name: 'license_plate' })
   licensePlate: string;
 
   @Column({
     type: 'enum',
     enum: VehicleType,
+    name: 'type',
   })
   type: VehicleType;
 

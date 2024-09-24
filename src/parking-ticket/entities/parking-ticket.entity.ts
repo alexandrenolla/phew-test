@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -15,17 +16,19 @@ export class ParkingTicket {
   id: number;
 
   @ManyToOne(() => ParkingSlot)
+  @JoinColumn({ name: 'parking_slot_id' })
   slot: ParkingSlot;
 
   @ManyToOne(() => Vehicle)
+  @JoinColumn({ name: 'vehicle_id' })
   vehicle: Vehicle;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'entry_time' })
   entryTime: Date;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn({ name: 'exit_time', nullable: true })
   exitTime: Date;
 
-  @Column({ nullable: true })
+  @Column({ name: 'total_amount', nullable: true })
   totalAmount: number;
 }
