@@ -32,19 +32,16 @@
 $ npm install
 ```
 
-## Step-by-Step instructions to run DB
+## Step-by-Step to run APP and DB with initial data loaded
 
-1. Access PostgreSQL: Open your terminal and access the PostgreSQL console. You can use the default postgres user or a user you created, like default_user:
-``psql -U default_user``
+	1.	Go to the ``ormconfig.ts`` file and change the value of the host property to the IP address of your Wi-Fi router.
 
-2. Create the Database: If you don’t have a database yet, create one with the following command:
-``CREATE DATABASE phew_test;``
+	2.	Run docker compose up (to automatically generate the tables in the database).
 
-3. Connect to the Database: To connect to the newly created database, run:
-``psql -U default_user -d phew_test``
+	3.	When the app is running, stop the container.
 
-4. Start the Application: Run your NestJS application to automatically generate the tables:
-``npm run start`` or ``npm run start:dev``
+	4.	Still on ``ormconfig.ts``, change the ``migrationsRun`` property from false to true (so it can generate the initial data load).
+  
+	5.	Run docker compose up again and have fun.
 
-5. Confirm Table Creation: You can check if the tables have been created by running:
-``\dt``
+  You can access the documentation with the endpoints directly in the browser at ``http://localhost:3001/docs``, and you can also access the database using your preferred client with the credentials provided in the ``ormconfig.ts`` file.
